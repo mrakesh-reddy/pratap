@@ -22,17 +22,14 @@ export const AudioProvider = ({ children }) => {
 
     const handleCanPlay = () => {
       setIsReady(true);
-      console.log('Audio is ready to play');
     };
     
     const handlePlay = () => {
       setIsPlaying(true);
-      console.log('Audio started playing');
     };
     
     const handlePause = () => {
       setIsPlaying(false);
-      console.log('Audio paused');
     };
 
     const handleError = (e) => {
@@ -50,13 +47,30 @@ export const AudioProvider = ({ children }) => {
     // Try to load audio
     audio.load();
 
+    // Add global click handler to start music on any interaction
+    const handleGlobalClick = async () => {
+      if (!isPlaying && isReady) {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+        } catch (error) {
+          console.error('Failed to play on click:', error);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick);
+    document.addEventListener('touchstart', handleGlobalClick);
+
     return () => {
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('play', handlePlay);
       audio.removeEventListener('pause', handlePause);
       audio.removeEventListener('error', handleError);
+      document.removeEventListener('click', handleGlobalClick);
+      document.removeEventListener('touchstart', handleGlobalClick);
     };
-  }, []);
+  }, [isPlaying, isReady]);
 
   const play = async () => {
     const audio = audioRef.current;

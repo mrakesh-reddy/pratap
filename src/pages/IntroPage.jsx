@@ -17,13 +17,6 @@ const IntroPage = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  useEffect(() => {
-    // Hide loading screen after 5 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-
-    return () => clearTimeout(timer);
   }, []);
 
   const handleInteraction = async () => {
