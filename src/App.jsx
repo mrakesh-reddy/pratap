@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { AnimatePresence } from 'framer-motion';
 import { AudioProvider } from './context/AudioContext';
 import ScrollToTop from './components/ScrollToTop';
+import MusicButton from './components/MusicButton';
 import IntroPage from './pages/IntroPage';
 import MemoriesPage from './pages/MemoriesPage';
 import LessonsPage from './pages/LessonsPage';
@@ -14,17 +15,20 @@ function AnimatedRoutes() {
   const location = useLocation();
   
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Navigate to="/intro" replace />} />
-        <Route path="/intro" element={<IntroPage />} />
-        <Route path="/memories" element={<MemoriesPage />} />
-        <Route path="/lessons" element={<LessonsPage />} />
-        <Route path="/principles" element={<PrinciplesPage />} />
-        <Route path="/proposal" element={<ProposalPage />} />
-        <Route path="/vision" element={<VisionPage />} />
-      </Routes>
-    </AnimatePresence>
+    <>
+      <MusicButton />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Navigate to="/intro" replace />} />
+          <Route path="/intro" element={<IntroPage />} />
+          <Route path="/memories" element={<MemoriesPage />} />
+          <Route path="/lessons" element={<LessonsPage />} />
+          <Route path="/principles" element={<PrinciplesPage />} />
+          <Route path="/proposal" element={<ProposalPage />} />
+          <Route path="/vision" element={<VisionPage />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 }
 

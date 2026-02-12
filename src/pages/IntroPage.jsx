@@ -17,17 +17,24 @@ const IntroPage = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
+  useEffect(() => {
+    // Hide loading screen after 5 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleInteraction = () => {
+  const handleInteraction = async () => {
     if (isReady) {
-      play();
+      await play();
     }
   };
 
-  const openLetter = () => {
+  const openLetter = async () => {
     setShowLetter(true);
-    handleInteraction();
+    await handleInteraction();
   };
 
   const closeLetter = () => {
@@ -47,6 +54,8 @@ const IntroPage = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
+        onClick={handleInteraction}
+        onTouchStart={handleInteraction}
       >
         <div className="loading-content">
           <div className="heart-icon">❤️</div>

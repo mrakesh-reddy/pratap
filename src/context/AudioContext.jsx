@@ -14,32 +14,89 @@ export const AudioProvider = ({ children }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleCanPlay = () => setIsReady(true);
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const handleCanPlay = () => {
+      setIsReady(true);
+      console.log('Audio is ready to play');
+    };
+    
+    const handlePlay = () => {
+      setIsPlaying(true);
+      console.log('Audio started playing');
+    };
+    
+    const handlePause = () => {
+      setIsPlaying(false);
+      console.log('Audio paused');
+    };
+
+    const handleError = (e) => {
+      console.error('Audio error:', e);
+    };
+
+    // Set initial volume
+    audio.volume = 0.7;
 
     audio.addEventListener('canplay', handleCanPlay);
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
+    audio.addEventListener('error', handleError);
+
+    // Try to load audio
+    audio.load();
 
     return () => {
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('play', handlePlay);
       audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('error', handleError);
     };
   }, []);
 
   const play = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
     try {
-      await audioRef.current?.play();
-      setIsPlaying(true);
+      // Ensure audio is loaded
+      if (audio.readyState < 2) {
+        await new Promise((resolve) => {
+          audio.addEventListener('canplay', resolve, { once: true });
+          audio.load();
+        });
+      }
+
+      // Unlock audio on mobile if needed
+      if (!isUnlocked) {
+        setIsUnlocked(true);
+      }
+
+      // Attempt to play
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        await playPromise;
+        setIsPlaying(true);
+        console.log('Audio playing successfully');
+      }
     } catch (error) {
-      console.log('Audio play failed:', error);
+      console.error('Audio play failed:', error);
+      
+      // Retry after a short delay
+      setTimeout(async () => {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+          console.log('Audio playing after retry');
+        } catch (retryError) {
+          console.error('Retry failed:', retryError);
+        }
+      }, 500);
     }
   };
 
@@ -64,6 +121,8 @@ export const AudioProvider = ({ children }) => {
         loop
         preload="auto"
         playsInline
+        crossOrigin="anonymous"
+        style={{ display: 'none' }}
       />
       {children}
     </AudioContext.Provider>
