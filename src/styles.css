@@ -233,11 +233,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Memories Header */
 .memories-header {
-    padding: 120px 20px;
+    padding: 80px 20px 40px;
     background: rgba(250, 247, 240, 0.85);
     backdrop-filter: blur(10px);
     text-align: center;
-    min-height: 100vh;
 }
 
 .section-description {
@@ -249,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Memory Cards */
 .memory-card {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: rgba(255, 245, 245, 0.8);
     backdrop-filter: blur(5px);
 }

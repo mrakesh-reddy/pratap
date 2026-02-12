@@ -22,6 +22,15 @@ export const AudioProvider = ({ children }) => {
 
     const handleCanPlay = () => {
       setIsReady(true);
+      // Try to autoplay when ready (will work after user interaction)
+      if (!isPlaying) {
+        audio.play().then(() => {
+          setIsPlaying(true);
+          console.log('Autoplay successful');
+        }).catch(() => {
+          console.log('Autoplay blocked, waiting for user interaction');
+        });
+      }
     };
     
     const handlePlay = () => {
@@ -49,18 +58,33 @@ export const AudioProvider = ({ children }) => {
 
     // Add global click handler to start music on any interaction
     const handleGlobalClick = async () => {
-      if (!isPlaying && isReady) {
+      if (!isPlaying) {
         try {
+          // Try to play immediately
           await audio.play();
           setIsPlaying(true);
+          setIsUnlocked(true);
+          console.log('Music started on user interaction');
         } catch (error) {
-          console.error('Failed to play on click:', error);
+          console.log('Play attempt failed, will retry:', error.message);
+          // If first attempt fails, load and try again
+          try {
+            audio.load();
+            await new Promise(resolve => setTimeout(resolve, 100));
+            await audio.play();
+            setIsPlaying(true);
+            setIsUnlocked(true);
+            console.log('Music started on retry');
+          } catch (retryError) {
+            console.error('Failed to play on interaction:', retryError);
+          }
         }
       }
     };
 
-    document.addEventListener('click', handleGlobalClick);
-    document.addEventListener('touchstart', handleGlobalClick);
+    // Only add listeners once
+    document.addEventListener('click', handleGlobalClick, { once: false });
+    document.addEventListener('touchstart', handleGlobalClick, { once: false });
 
     return () => {
       audio.removeEventListener('canplay', handleCanPlay);
@@ -135,7 +159,6 @@ export const AudioProvider = ({ children }) => {
         loop
         preload="auto"
         playsInline
-        crossOrigin="anonymous"
         style={{ display: 'none' }}
       />
       {children}

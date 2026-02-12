@@ -25,16 +25,17 @@ const IntroPage = () => {
     }
   };
 
-  const openLetter = async () => {
+  const openLetter = async (e) => {
+    e.stopPropagation();
     setShowLetter(true);
-    await handleInteraction();
   };
 
   const closeLetter = () => {
     setShowLetter(false);
   };
 
-  const triggerSurprise = () => {
+  const triggerSurprise = (e) => {
+    e.stopPropagation();
     setShowSurprise(true);
     setTimeout(() => setShowSurprise(false), 5000);
   };
@@ -67,7 +68,6 @@ const IntroPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
       onClick={handleInteraction}
     >
       <section className="intro-section">
@@ -143,7 +143,10 @@ const IntroPage = () => {
           <div className="page-navigation" style={{ marginTop: '60px' }}>
             <motion.button
               className="nav-btn next-btn"
-              onClick={() => navigate('/memories')}
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/memories');
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
