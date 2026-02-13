@@ -4,8 +4,13 @@ import { motion } from 'framer-motion';
 
 const lessons = [
   { 
-    id: '2021', 
+    id: '2020', 
     title: 'The Year We Chose Eachother', 
+    text: 'We met for the first time on September 18th at a cafe. I spoke a lot that day, and I still remember that beautiful laugh of yours. I opened my heart completely, and you accepted me exactly as I am.' 
+  },
+  { 
+    id: '2021', 
+    title: 'The Year When My Fear Came True', 
     text: 'You fell for someone else, and my heart shattered into pieces I thought I could never put back together. But you fought through your heartbreak and realized something I had known all along - that we belonged together. That year taught me that sometimes love needs to wander to find its way home.' 
   },
   { 
@@ -15,7 +20,7 @@ const lessons = [
   },
   { 
     id: '2023', 
-    title: 'The Scent I Cannot Forget', 
+    title: 'The Fragrance I Cannot Forget', 
     text: 'January 12th - my birthday. You gifted me three perfumes, each one carefully chosen. They sit on my shelf, barely touched, because no fragrance in the world compares to the way you smell. Those bottles remind me that the best things in life are not meant to be used - they are meant to be cherished, just like every memory of you.' 
   },
   { 
@@ -31,7 +36,7 @@ const lessons = [
   { 
     id: '2026', 
     title: 'The Midnight Message', 
-    text: 'This year, something changed. For the first time in six years, you remembered my birthday. At exactly 12:00 AM, my phone lit up with your message. It was not grand, it was not dramatic - but it meant everything. Because it told me that maybe, just maybe, I still matter to you the way you have always mattered to me. And that small gesture gave me the courage to create this for you.' 
+    text: 'This year, something changed. For the first time in six years, you remembered my actual birth date. At exactly 12:00 AM, my phone lit up with your message. It was not grand, it was not dramatic - but it meant everything. Because it told me that maybe, just maybe, I still matter to you the way you have always mattered to me. And that small gesture gave me the courage to create this for you.' 
   }
 ];
 
@@ -61,7 +66,7 @@ const LessonsPage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            2021 to 2026. Every year held a piece of our story—the beautiful, the painful, and everything in between.
+            2020 to 2026. Every year held a piece of our story—the beautiful, the painful, and everything in between.
           </motion.p>
 
           {/* Interactive Map */}

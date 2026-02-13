@@ -62,42 +62,42 @@ const memories = [
   },
   {
     id: 9,
-    image: '6.jpeg',
-    title: 'My Dream With You',
-    subtitle: "Vitamin S, Baby Girl, Let's Travel the World",
-    description: "My Vitamin S, my baby girl — these aren't just names I call you. They're promises. You energize my soul and fill my heart with purpose. I dream of traveling the world with you, exploring every corner of this earth together, making memories in places we've only talked about. Distance and mistakes taught me lessons I needed to learn, but they also taught me this: I don't want to see the world without you. I want to hold your hand through every adventure, every sunset, every new city. Let's make this dream real."
-  },
-  {
-    id: 10,
-    image: '10.jpeg',
-    title: 'Awestruck',
-    subtitle: 'You in Red',
-    description: "I was completely awestruck seeing you in that traditional red saree. You looked so beautiful, so elegant, so radiant. In that moment, I couldn't breathe. I couldn't speak. I could only stand there, mesmerized by how someone could be so effortlessly stunning. You didn't just wear that saree — you owned it."
-  },
-  {
-    id: 11,
-    image: '11.jpeg',
-    title: 'Your Smile in Red',
-    subtitle: 'When I Almost Fainted in Love',
-    description: "Your smile in that red saree... I almost fainted in love. It wasn't just about how you looked — it was about the joy in your eyes, the confidence in your smile, the way you glowed from within. That image is etched in my heart forever. You were, and still are, absolutely breathtaking."
-  },
-  {
-    id: 12,
     image: '12.jpeg',
-    title: 'Cooking for You',
+    title: 'Caring for You',
     subtitle: 'The Love I Want to Serve',
     description: "I cook nicely — not better than you, of course, but well enough to make you smile. Whenever you're feeling low, whenever you're hungry or just need comfort, I want to cook for you. I want to feed you with my own hands, watch you enjoy every bite, and know that I'm the reason you feel cared for and loved."
   },
   {
-    id: 13,
+    id: 10,
     image: '3.jpeg',
     title: 'Innocence from the Start',
     subtitle: 'Your Childhood Cuteness',
     description: "How cute you were from childhood! This picture of little you makes my heart melt. Even back then, there was something special about you — the innocence, the sweetness, the pure joy in your eyes. You've always been beautiful, inside and out, from the very beginning."
   },
   {
-    id: 14,
+    id: 11,
     image: '13.jpeg',
+    title: 'My Dream With You',
+    subtitle: "Vitamin S, Baby Girl, Let's Travel the World",
+    description: "My Vitamin S, my baby girl — these aren't just names I call you. They're promises. You energize my soul and fill my heart with purpose. I dream of traveling the world with you, exploring every corner of this earth together, making memories in places we've only talked about. Distance and mistakes taught me lessons I needed to learn, but they also taught me this: I don't want to see the world without you. I want to hold your hand through every adventure, every sunset, every new city. Let's make this dream real."
+  },
+  {
+    id: 12,
+    image: '10.jpeg',
+    title: 'Awestruck',
+    subtitle: 'You in Red',
+    description: "I was completely awestruck seeing you in that traditional red saree. You looked so beautiful, so elegant, so radiant. In that moment, I couldn't breathe. I couldn't speak. I could only stand there, mesmerized by how someone could be so effortlessly stunning. You didn't just wear that saree — you owned it."
+  },
+  {
+    id: 13,
+    image: '11.jpeg',
+    title: 'Your Smile in Red',
+    subtitle: 'When I Almost Fainted in Love',
+    description: "Your smile in that red saree... I almost fainted in love. It wasn't just about how you looked — it was about the joy in your eyes, the confidence in your smile, the way you glowed from within. That image is etched in my heart forever. You were, and still are, absolutely breathtaking."
+  },
+  {
+    id: 14,
+    image: '6.jpeg',
     title: 'This Moment',
     subtitle: 'Right Here, Right Now',
     description: "This isn't just a proposal. It's an invitation. To laugh again. To trust again. To see if what we had can become what we need. No pressure. No urgency. Just honesty, hope, and the belief that some love stories deserve a second chapter."
