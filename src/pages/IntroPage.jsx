@@ -79,7 +79,7 @@ const IntroPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Saloni,
+            Salu,
           </motion.h1>
           <div className="intro-text">
             <motion.p
@@ -88,7 +88,7 @@ const IntroPage = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              In 2020, you entered my life through a simple Instagram message.
+              In 2020, we got connected through a simple Instagram message.
             </motion.p>
             <motion.p
               className="fade-in"
@@ -114,7 +114,7 @@ const IntroPage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <p className="distance-info">India to Germany. 7,000 kilometers. 6 years.</p>
+            <p className="distance-info">India to Germany. 6,345 kilometers. 6 years.</p>
             <p className="story-tagline">This is our story.</p>
           </motion.div>
 
@@ -190,10 +190,10 @@ const IntroPage = () => {
           >
             <button className="letter-close" onClick={closeLetter}>×</button>
             <div className="letter-paper">
-              <h2 className="letter-title">My Dearest Saloni,</h2>
+              <h2 className="letter-title">Baby Girl,</h2>
               <div className="letter-text">
                 <p>There are moments when words feel too small to carry what the heart holds. This is one of them.</p>
-                <p>Over these 6 years, across 7,000 kilometers, through countless nights and timezone-tangled mornings, I've learned what it means to love someone from a distance — and still choose them every single day.</p>
+                <p>Over these 6 years, across 6,345 kilometers, through countless nights and timezone-tangled mornings, I've learned what it means to love someone from a distance — and still choose them every single day.</p>
                 <p>You weren't just someone I talked to. You became the person I wanted to tell everything to. The one whose happiness mattered more than being right. The one whose peace I wanted to protect, even when I didn't know how.</p>
                 <p>I've made mistakes. I've been immature, controlling, and let my pride hurt us. But distance taught me. Silence taught me. And losing you taught me most of all.</p>
                 <p>I'm not asking you to forget the past. I'm asking if we can build something new — something better, something honest, something real.</p>

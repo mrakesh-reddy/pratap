@@ -5,90 +5,99 @@ const memories = [
   {
     id: 1,
     image: '4.jpeg',
-    title: 'The First Effort',
-    subtitle: 'Your First Birthday After We Met, 2020',
+    title: 'After the first connect',
+    subtitle: 'Your First Birthday After We Connected, 2020',
     description: "I wanted to make you smile. A bouquet, a cake, a teddy bear - small gestures that meant the world to me. It was the first time I felt the joy of giving without expecting anything in return. That day, I learned that love is about showing up, even when it's just through flowers and hope."
   },
   {
     id: 2,
     image: '2.jpeg',
-    title: 'The Mistake',
-    subtitle: 'When I Let Ego Win',
-    description: "I chose pride over you. I was controlling, insecure, and made you feel like I didn't trust your love. This memory haunts me — not because I lost you, but because I hurt you. It taught me that real love isn't about possession; it's about trust, respect, and letting someone be free while choosing to stay."
+    title: 'My Baby Girl',
+    subtitle: 'Through Every Fight, We Found Our Way Back',
+    description: "You are a child inside, and that's what I love most about you — my baby girl with the purest heart. I know we fought a lot, sometimes over things that didn't matter, but we never truly disconnected. We always found our way back to each other, stronger and happier than before. Every argument taught us something, every makeup reminded us why we chose each other. I never wanted to lose you, not for a single moment. And through it all, we proved that real love isn't perfect — it's about coming back, choosing each other, and growing together."
   },
   {
     id: 3,
-    image: '8.jpeg',
-    title: 'When We Almost Had It',
-    subtitle: 'The Days We Were Just... Us',
-    description: "There was a time when things felt easy. We laughed, we planned futures, we talked about small things that felt important. This was the version of us I want back — where love felt natural, not complicated. I miss how you made ordinary days feel like something worth living."
+    type: 'video',
+    image: 'video_1.mp4',
+    title: 'When I Fell Completely',
+    subtitle: 'Your Innocence Captured My Heart',
+    description: "This is the day I completely fell for your innocence. There was something pure, genuine, and beautiful about the way you were — no pretense, no walls, just you. In that moment, I knew I had found something rare. Someone whose heart was as beautiful as her smile."
   },
   {
     id: 4,
-    image: '5.jpeg',
-    title: 'Your Strength',
-    subtitle: 'When You Chose Yourself',
-    description: "You left when it became too much. At first, I didn't understand. But now I see it — you chose your peace over something that was breaking you. That took courage I didn't have. You taught me that loving someone also means knowing when to step back, heal, and find yourself again."
+    image: '8.jpeg',
+    title: 'My Vitamin S',
+    subtitle: 'The Day I Realized You Are My Life',
+    description: "The day when I realized you are the real Vitamin S of my life — the one who boosts me, energizes me, and makes everything better. You're not just someone I love; you're someone I see my entire life with. You give me strength when I'm weak, hope when I'm lost, and purpose when I feel empty."
   },
   {
     id: 5,
-    image: '6.jpeg',
-    title: 'What Distance Taught Me',
-    subtitle: '7,000 Kilometers of Growth',
-    description: "Every kilometer between us became a reminder of what I took for granted. The timezone differences, the delayed texts, the longing — they all taught me patience, empathy, and the true weight of missing someone. Distance didn't weaken my love. It clarified it."
+    image: '5.jpeg',
+    title: 'More Valuable Than Time',
+    subtitle: 'You Are My Most Precious Treasure',
+    description: "They say time is the most valuable thing in this world. But you... you are more valuable than time itself. Every second with you is worth more than all the moments I've lived without you. This isn't just about minutes or hours — it's about how you make every moment matter."
   },
   {
     id: 6,
-    image: '7.jpeg',
-    title: 'The Memories I Replay',
-    subtitle: 'Late Night Calls and Morning Texts',
-    description: "I replay our conversations. The way you laughed at something silly. The way you opened up about your fears. The way you made me feel seen even from thousands of miles away. These aren't just memories. They're proof that what we had was real, rare, and worth fighting for."
+    image: '9.jpeg',
+    title: 'When You Saved Me',
+    subtitle: 'The Call That Changed Everything',
+    description: "When I was at my lowest point — my company went bankrupt, and I felt like I had lost everything — your phone call gave me hope and strength to believe in life again. You didn't just listen; you made me feel like I wasn't alone in the darkness. You were my light when I couldn't find my own."
   },
   {
     id: 7,
-    image: '9.jpeg',
-    title: 'When I Realized',
-    subtitle: 'The Moment That Changed Everything',
-    description: "There was a moment when silence became louder than words. I realized I hadn't just lost you — I had lost myself. That emptiness forced me to confront who I was, what I wanted, and how badly I had failed you. Without that pain, I wouldn't have grown into someone worthy of asking for a second chance."
+    type: 'video',
+    image: 'video_2.mp4',
+    title: 'The Video Calls I Replay',
+    subtitle: 'My Favorite Moments Despite the Distance',
+    description: "The video calls with you are the moments I replay most in my heart. Though 6,345 kilometers separated us, I never forgot you — not for a second. These calls weren't just conversations; they were lifelines, glimpses of your smile, echoes of your laughter that made distance feel a little less cruel. Every time we connected, even through a screen, you made me happier than I knew how to express. These weren't just calls. They were proof that distance could never erase what we had."
   },
   {
     id: 8,
-    image: '10.jpeg',
-    title: 'What You Deserve',
-    subtitle: 'The Love I Should Have Given',
-    description: "You deserve someone who doesn't make you question if you're enough. Someone who sees your worth without needing to test it. Someone who chooses you not out of fear of losing you, but because life feels incomplete without you. I want to be that person — not the one I was, but the one I've become."
+    image: '6.jpeg',
+    title: 'My Dream With You',
+    subtitle: "Vitamin S, Baby Girl, Let's Travel the World",
+    description: "My Vitamin S, my baby girl — these aren't just names I call you. They're promises. You energize my soul and fill my heart with purpose. I dream of traveling the world with you, exploring every corner of this earth together, making memories in places we've only talked about. Distance and mistakes taught me lessons I needed to learn, but they also taught me this: I don't want to see the world without you. I want to hold your hand through every adventure, every sunset, every new city. Let's make this dream real."
   },
   {
     id: 9,
-    image: '11.jpeg',
-    title: 'The Future I Imagine',
-    subtitle: 'If You Give Me a Chance',
-    description: "I imagine a future where we don't have to heal from each other — we heal together. Where love feels safe, not suffocating. Where 7,000 kilometers become zero, and I can finally show you in person what words have tried to say for years. I imagine us, not perfect, but real."
+    image: '10.jpeg',
+    title: 'Awestruck',
+    subtitle: 'You in Red',
+    description: "I was completely awestruck seeing you in that traditional red saree. You looked so beautiful, so elegant, so radiant. In that moment, I couldn't breathe. I couldn't speak. I could only stand there, mesmerized by how someone could be so effortlessly stunning. You didn't just wear that saree — you owned it."
   },
   {
     id: 10,
-    image: '12.jpeg',
-    title: 'Your Happiness',
-    subtitle: 'What Matters Most',
-    description: "Above everything — my regrets, my hope, my love — your happiness matters most. If moving forward means moving on, I'll accept it. But if there's even a small part of you that still wonders what we could be, I'm asking for that chance. Not to go back. To start new."
+    image: '11.jpeg',
+    title: 'Your Smile in Red',
+    subtitle: 'When I Almost Fainted in Love',
+    description: "Your smile in that red saree... I almost fainted in love. It wasn't just about how you looked — it was about the joy in your eyes, the confidence in your smile, the way you glowed from within. That image is etched in my heart forever. You were, and still are, absolutely breathtaking."
   },
   {
     id: 11,
-    image: '13.jpeg',
-    title: 'Gratitude',
-    subtitle: 'For Everything You Were',
-    description: "Thank you for believing in me when I was still learning to believe in myself. Thank you for your patience, even when I didn't deserve it. Thank you for teaching me what it means to truly love someone. Even if this is where our story ends, you've left a mark on me that will never fade."
+    image: '12.jpeg',
+    title: 'Cooking for You',
+    subtitle: 'The Love I Want to Serve',
+    description: "I cook nicely — not better than you, of course, but well enough to make you smile. Whenever you're feeling low, whenever you're hungry or just need comfort, I want to cook for you. I want to feed you with my own hands, watch you enjoy every bite, and know that I'm the reason you feel cared for and loved."
   },
   {
     id: 12,
     image: '1.jpeg',
-    title: 'The Question',
-    subtitle: 'What Now?',
-    description: "We've been through distance, mistakes, silence, and growth. Now I'm standing here, not as the person I was, but as someone who's learned from every failure. The question isn't whether I love you — I do, and I always will. The question is: do you believe we can build something better together?"
+    title: 'Your Glow',
+    subtitle: 'The Day at the Chinese Restaurant',
+    description: "This day we went out to your favorite Chinese cuisine restaurant. Your parents sent you, and your glow that day was unmatchable. You radiated happiness, warmth, and beauty in a way that stopped time. I took this picture not just as a memory, but as proof that heaven exists — and it looks like your smile."
   },
   {
     id: 13,
     image: '3.jpeg',
+    title: 'Innocence from the Start',
+    subtitle: 'Your Childhood Cuteness',
+    description: "How cute you were from childhood! This picture of little you makes my heart melt. Even back then, there was something special about you — the innocence, the sweetness, the pure joy in your eyes. You've always been beautiful, inside and out, from the very beginning."
+  },
+  {
+    id: 14,
+    image: '13.jpeg',
     title: 'This Moment',
     subtitle: 'Right Here, Right Now',
     description: "This isn't just a proposal. It's an invitation. To laugh again. To trust again. To see if what we had can become what we need. No pressure. No urgency. Just honesty, hope, and the belief that some love stories deserve a second chapter."
@@ -142,7 +151,17 @@ const MemoriesPage = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="memory-image">
-                <img src={`/images/${memory.image}`} alt={memory.title} />
+                {memory.type === 'video' ? (
+                  <video 
+                    src={`/videos/${memory.image}`} 
+                    controls 
+                    loop
+                    playsInline
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <img src={`/images/${memory.image}`} alt={memory.title} />
+                )}
               </div>
               <div className="memory-text">
                 <h3 className="memory-title">{memory.title}</h3>

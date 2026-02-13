@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { AnimatePresence } from 'framer-motion';
 import { AudioProvider } from './context/AudioContext';
 import ScrollToTop from './components/ScrollToTop';
+import FloatingText from './components/FloatingText';
 import IntroPage from './pages/IntroPage';
 import MemoriesPage from './pages/MemoriesPage';
 import LessonsPage from './pages/LessonsPage';
@@ -34,6 +35,7 @@ function App() {
   return (
     <AudioProvider>
       <BrowserRouter>
+        <FloatingText />
         <ScrollToTop />
         <AnimatedRoutes />
       </BrowserRouter>

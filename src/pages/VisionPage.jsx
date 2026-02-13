@@ -69,7 +69,7 @@ const VisionPage = () => {
             <p className="final-text">
               I can't change the past. I can't erase the mistakes.<br />
               But I can offer you a future where those mistakes are lessons,<br />
-              where love is a choice we make every day, and where the 7,000 kilometers<br />
+              where love is a choice we make every day, and where the 6,345 kilometers<br />
               that once separated us become the story of how we found our way back.
             </p>
             <p className="final-signature">Forever yours,<br />Rudra</p>

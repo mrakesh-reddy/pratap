@@ -8,10 +8,16 @@ const ProposalPage = () => {
 
   const handleYes = () => {
     setResponse('yes');
+    // Open WhatsApp in a new tab with pre-filled message
+    const message = encodeURIComponent("I don't even have words right now... You poured your entire heart into this, and I felt every single word. My heart is so full. Yes, a thousand times yes. I want this. I want us. Let's build our forever together.");
+    window.open(`https://wa.me/919624802028?text=${message}`, '_blank');
   };
 
   const handleNeedTime = () => {
     setResponse('time');
+    // Open WhatsApp in a new tab with pre-filled message
+    const message = encodeURIComponent("I'm sitting here with tears in my eyes because of everything you created for me. It's the most beautiful thing anyone has ever done. My heart feels so much right now, and I need time to let it all sink in. Please understand - this isn't a no, it's just me needing space to process how deeply you've touched my soul. Can we talk soon?");
+    window.open(`https://wa.me/919624802028?text=${message}`, '_blank');
   };
 
   return (
@@ -52,8 +58,21 @@ const ProposalPage = () => {
                   <motion.button
                     className="proposal-btn yes-btn"
                     onClick={handleYes}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.15 }}
                     whileTap={{ scale: 0.95 }}
+                    animate={{
+                      boxShadow: [
+                        '0 0 30px rgba(212, 175, 55, 0.6)',
+                        '0 0 60px rgba(212, 175, 55, 0.9)',
+                        '0 0 30px rgba(212, 175, 55, 0.6)'
+                      ],
+                      scale: [1, 1.08, 1]
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
                   >
                     Yes ❤️
                   </motion.button>
@@ -82,7 +101,7 @@ const ProposalPage = () => {
                 >
                   ❤️
                 </motion.div>
-                <h2 className="response-title">Thank You, Saloni</h2>
+                <h2 className="response-title">Thank You, Salu</h2>
                 <div className="response-text">
                   <p className="highlight-text">You've made me the happiest.</p>
                   <p>

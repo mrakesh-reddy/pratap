@@ -27,6 +27,18 @@ body::before {
     z-index: -1;
 }
 
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     color: #C97C7C;
@@ -490,9 +502,9 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
+    width: 80px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: 28px;
     background: linear-gradient(135deg, #C97C7C, #D4AF37);
     color: white;
     font-family: 'Playfair Display', serif;
@@ -645,23 +657,85 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .yes-btn {
-    background: linear-gradient(135deg, #C97C7C, #D4AF37);
+    background: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37);
+    background-size: 200% 200%;
     color: white;
+    font-size: 24px !important;
+    font-weight: 700;
+    padding: 24px 60px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.8),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    animation: shimmer 2s ease-in-out infinite, glow-pulse 1.5s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.yes-btn::before {
+    content: '✨';
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    animation: sparkle 1s ease-in-out infinite;
+}
+
+.yes-btn::after {
+    content: '✨';
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    animation: sparkle 1s ease-in-out infinite 0.5s;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8),
+                    0 0 60px rgba(212, 175, 55, 0.6),
+                    inset 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(212, 175, 55, 1),
+                    0 0 90px rgba(212, 175, 55, 0.8),
+                    inset 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.4; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 .yes-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
+    background: linear-gradient(135deg, #FFD700, #FFF4A3, #FFD700);
+    box-shadow: 0 0 60px rgba(212, 175, 55, 1),
+                0 0 90px rgba(212, 175, 55, 0.9),
+                0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .time-btn {
     background: white;
     color: #8B8B8B;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.4; }
 }
 
 .time-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: none;
+    opacity: 1;
 }
 
 /* Response Styles */
@@ -1096,10 +1170,22 @@ h1, h2, h3, h4, h5, h6 {
     width: 180px;
     height: 120px;
     transition: transform 0.4s ease;
+    animation: envelope-bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes envelope-bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
 }
 
 .envelope:hover {
-    transform: scale(1.05);
+    animation: none;
+    transform: scale(1.1);
 }
 
 .envelope-body {
@@ -1139,15 +1225,44 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
     font-family: 'Playfair Display', serif;
     font-size: 14px;
-    color: #C97C7C;
+    color: #A0826D;
     font-style: italic;
     white-space: nowrap;
-    opacity: 0.8;
+    opacity: 1;
     transition: opacity 0.3s ease;
+    text-shadow: 
+        0 0 10px rgba(201, 124, 124, 0.8),
+        0 0 20px rgba(201, 124, 124, 0.6),
+        0 0 30px rgba(201, 124, 124, 0.4),
+        0 0 40px rgba(201, 124, 124, 0.2);
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(201, 124, 124, 0.8),
+            0 0 20px rgba(201, 124, 124, 0.6),
+            0 0 30px rgba(201, 124, 124, 0.4),
+            0 0 40px rgba(201, 124, 124, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(201, 124, 124, 1),
+            0 0 30px rgba(201, 124, 124, 0.8),
+            0 0 40px rgba(201, 124, 124, 0.6),
+            0 0 50px rgba(201, 124, 124, 0.4),
+            0 0 60px rgba(201, 124, 124, 0.2);
+    }
 }
 
 .envelope:hover .envelope-label {
     opacity: 1;
+    text-shadow: 
+        0 0 20px rgba(201, 124, 124, 1),
+        0 0 30px rgba(201, 124, 124, 0.8),
+        0 0 40px rgba(201, 124, 124, 0.6),
+        0 0 50px rgba(201, 124, 124, 0.4);
 }
 
 /* Letter Overlay */
@@ -1478,5 +1593,36 @@ h1, h2, h3, h4, h5, h6 {
     
     .envelope-flap {
         height: 65px;
+    }
+}
+
+/* Floating Text Background */
+.floating-text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.floating-text {
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #C97C7C;
+    white-space: nowrap;
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 0 10px rgba(201, 124, 124, 0.3);
+}
+
+@media (max-width: 768px) {
+    .floating-text {
+        font-size: 11px;
     }
 }

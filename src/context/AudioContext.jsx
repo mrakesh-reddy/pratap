@@ -14,7 +14,7 @@ export const AudioProvider = ({ children }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const hasInteractedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -22,15 +22,6 @@ export const AudioProvider = ({ children }) => {
 
     const handleCanPlay = () => {
       setIsReady(true);
-      // Try to autoplay when ready (will work after user interaction)
-      if (!isPlaying) {
-        audio.play().then(() => {
-          setIsPlaying(true);
-          console.log('Autoplay successful');
-        }).catch(() => {
-          console.log('Autoplay blocked, waiting for user interaction');
-        });
-      }
     };
     
     const handlePlay = () => {
@@ -57,34 +48,23 @@ export const AudioProvider = ({ children }) => {
     audio.load();
 
     // Add global click handler to start music on any interaction
-    const handleGlobalClick = async () => {
-      if (!isPlaying) {
+    const handleGlobalClick = async (e) => {
+      // Check if audio is paused or hasn't started
+      if (audio.paused) {
         try {
-          // Try to play immediately
+          console.log('Attempting to play audio on user interaction...');
           await audio.play();
-          setIsPlaying(true);
-          setIsUnlocked(true);
-          console.log('Music started on user interaction');
+          hasInteractedRef.current = true;
+          console.log('Music started successfully');
         } catch (error) {
-          console.log('Play attempt failed, will retry:', error.message);
-          // If first attempt fails, load and try again
-          try {
-            audio.load();
-            await new Promise(resolve => setTimeout(resolve, 100));
-            await audio.play();
-            setIsPlaying(true);
-            setIsUnlocked(true);
-            console.log('Music started on retry');
-          } catch (retryError) {
-            console.error('Failed to play on interaction:', retryError);
-          }
+          console.error('Failed to play audio:', error);
         }
       }
     };
 
-    // Only add listeners once
-    document.addEventListener('click', handleGlobalClick, { once: false });
-    document.addEventListener('touchstart', handleGlobalClick, { once: false });
+    // Add listeners - they will persist and check audio state each time
+    document.addEventListener('click', handleGlobalClick);
+    document.addEventListener('touchstart', handleGlobalClick);
 
     return () => {
       audio.removeEventListener('canplay', handleCanPlay);
@@ -94,7 +74,7 @@ export const AudioProvider = ({ children }) => {
       document.removeEventListener('click', handleGlobalClick);
       document.removeEventListener('touchstart', handleGlobalClick);
     };
-  }, [isPlaying, isReady]);
+  }, []);
 
   const play = async () => {
     const audio = audioRef.current;
@@ -109,32 +89,14 @@ export const AudioProvider = ({ children }) => {
         });
       }
 
-      // Unlock audio on mobile if needed
-      if (!isUnlocked) {
-        setIsUnlocked(true);
-      }
+      // Mark user interaction
+      hasInteractedRef.current = true;
 
       // Attempt to play
-      const playPromise = audio.play();
-      
-      if (playPromise !== undefined) {
-        await playPromise;
-        setIsPlaying(true);
-        console.log('Audio playing successfully');
-      }
+      await audio.play();
+      console.log('Audio playing successfully');
     } catch (error) {
       console.error('Audio play failed:', error);
-      
-      // Retry after a short delay
-      setTimeout(async () => {
-        try {
-          await audio.play();
-          setIsPlaying(true);
-          console.log('Audio playing after retry');
-        } catch (retryError) {
-          console.error('Retry failed:', retryError);
-        }
-      }, 500);
     }
   };
 
