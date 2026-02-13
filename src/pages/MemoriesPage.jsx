@@ -12,12 +12,19 @@ const memories = [
   {
     id: 2,
     image: '2.jpeg',
-    title: 'My Baby Girl',
-    subtitle: 'Through Every Fight, We Found Our Way Back',
-    description: "You are a child inside, and that's what I love most about you — my baby girl with the purest heart. I know we fought a lot, sometimes over things that didn't matter, but we never truly disconnected. We always found our way back to each other, stronger and happier than before. Every argument taught us something, every makeup reminded us why we chose each other. I never wanted to lose you, not for a single moment. And through it all, we proved that real love isn't perfect — it's about coming back, choosing each other, and growing together."
+    title: 'The Mistake',
+    subtitle: 'When I Let Ego Win',
+    description: "I chose pride over you. I was controlling, insecure, and made you feel like I didn't trust your love. This memory haunts me — not because I lost you, but because I hurt you. It taught me that real love isn't about possession; it's about trust, respect, and letting someone be free while choosing to stay."
   },
   {
     id: 3,
+    image: '9.jpeg',
+    title: 'When You Saved Me',
+    subtitle: 'The Call That Changed Everything',
+    description: "When I was at my lowest point — my company went bankrupt, and I felt like I had lost everything — your phone call gave me hope and strength to believe in life again. You didn't just listen; you made me feel like I wasn't alone in the darkness. You were my light when I couldn't find my own."
+  },
+  {
+    id: 4,
     type: 'video',
     image: 'video_1.mp4',
     title: 'When I Fell Completely',
@@ -25,25 +32,18 @@ const memories = [
     description: "This is the day I completely fell for your innocence. There was something pure, genuine, and beautiful about the way you were — no pretense, no walls, just you. In that moment, I knew I had found something rare. Someone whose heart was as beautiful as her smile."
   },
   {
-    id: 4,
-    image: '8.jpeg',
-    title: 'My Vitamin S',
-    subtitle: 'The Day I Realized You Are My Life',
-    description: "The day when I realized you are the real Vitamin S of my life — the one who boosts me, energizes me, and makes everything better. You're not just someone I love; you're someone I see my entire life with. You give me strength when I'm weak, hope when I'm lost, and purpose when I feel empty."
-  },
-  {
     id: 5,
-    image: '5.jpeg',
-    title: 'More Valuable Than Time',
-    subtitle: 'You Are My Most Precious Treasure',
-    description: "They say time is the most valuable thing in this world. But you... you are more valuable than time itself. Every second with you is worth more than all the moments I've lived without you. This isn't just about minutes or hours — it's about how you make every moment matter."
+    image: '8.jpeg',
+    title: 'Realization',
+    subtitle: 'The Day I Realized You Are My Life Long Vitamin',
+    description: "The day when I realized you are the real Vitamin of my life — the one who boosts me, energizes me, and makes everything better. You're not just someone I love; you're someone I see my entire life with. You give me strength when I'm weak, hope when I'm lost, and purpose when I feel empty."
   },
   {
     id: 6,
-    image: '9.jpeg',
-    title: 'When You Saved Me',
-    subtitle: 'The Call That Changed Everything',
-    description: "When I was at my lowest point — my company went bankrupt, and I felt like I had lost everything — your phone call gave me hope and strength to believe in life again. You didn't just listen; you made me feel like I wasn't alone in the darkness. You were my light when I couldn't find my own."
+    image: '5.jpeg',
+    title: 'More Valuable Than Time',
+    subtitle: 'You Are My Most Precious Treasure',
+    description: "People say time is the most valuable thing in this world. But you... you are more valuable than time itself. Every second with you is worth more than all the moments I've lived without you. This isn't just about minutes or hours — it's about how you make every moment matter."
   },
   {
     id: 7,
@@ -154,6 +154,8 @@ const MemoriesPage = () => {
                 {memory.type === 'video' ? (
                   <video 
                     src={`/videos/${memory.image}`} 
+                    autoPlay
+                    muted
                     controls 
                     loop
                     playsInline
