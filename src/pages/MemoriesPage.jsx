@@ -25,6 +25,13 @@ const memories = [
   },
   {
     id: 4,
+    image: '1.jpeg',
+    title: 'Your Glow',
+    subtitle: 'The Day at the Chinese Restaurant',
+    description: "This day we went out to your favorite Chinese cuisine restaurant. Your parents sent you, and your glow that day was unmatchable. You radiated happiness, warmth, and beauty in a way that stopped time. I took this picture not just as a memory, but as proof that heaven exists — and it looks like your smile."
+  },
+  {
+    id: 5,
     type: 'video',
     image: 'video_1.mp4',
     title: 'When I Fell Completely',
@@ -32,21 +39,21 @@ const memories = [
     description: "This is the day I completely fell for your innocence. There was something pure, genuine, and beautiful about the way you were — no pretense, no walls, just you. In that moment, I knew I had found something rare. Someone whose heart was as beautiful as her smile."
   },
   {
-    id: 5,
+    id: 6,
     image: '8.jpeg',
     title: 'Realization',
     subtitle: 'The Day I Realized You Are My Life Long Vitamin',
     description: "The day when I realized you are the real Vitamin of my life — the one who boosts me, energizes me, and makes everything better. You're not just someone I love; you're someone I see my entire life with. You give me strength when I'm weak, hope when I'm lost, and purpose when I feel empty."
   },
   {
-    id: 6,
+    id: 7,
     image: '5.jpeg',
     title: 'More Valuable Than Time',
     subtitle: 'You Are My Most Precious Treasure',
     description: "People say time is the most valuable thing in this world. But you... you are more valuable than time itself. Every second with you is worth more than all the moments I've lived without you. This isn't just about minutes or hours — it's about how you make every moment matter."
   },
   {
-    id: 7,
+    id: 8,
     type: 'video',
     image: 'video_2.mp4',
     title: 'The Video Calls I Replay',
@@ -54,39 +61,32 @@ const memories = [
     description: "The video calls with you are the moments I replay most in my heart. Though 6,345 kilometers separated us, I never forgot you — not for a second. These calls weren't just conversations; they were lifelines, glimpses of your smile, echoes of your laughter that made distance feel a little less cruel. Every time we connected, even through a screen, you made me happier than I knew how to express. These weren't just calls. They were proof that distance could never erase what we had."
   },
   {
-    id: 8,
+    id: 9,
     image: '6.jpeg',
     title: 'My Dream With You',
     subtitle: "Vitamin S, Baby Girl, Let's Travel the World",
     description: "My Vitamin S, my baby girl — these aren't just names I call you. They're promises. You energize my soul and fill my heart with purpose. I dream of traveling the world with you, exploring every corner of this earth together, making memories in places we've only talked about. Distance and mistakes taught me lessons I needed to learn, but they also taught me this: I don't want to see the world without you. I want to hold your hand through every adventure, every sunset, every new city. Let's make this dream real."
   },
   {
-    id: 9,
+    id: 10,
     image: '10.jpeg',
     title: 'Awestruck',
     subtitle: 'You in Red',
     description: "I was completely awestruck seeing you in that traditional red saree. You looked so beautiful, so elegant, so radiant. In that moment, I couldn't breathe. I couldn't speak. I could only stand there, mesmerized by how someone could be so effortlessly stunning. You didn't just wear that saree — you owned it."
   },
   {
-    id: 10,
+    id: 11,
     image: '11.jpeg',
     title: 'Your Smile in Red',
     subtitle: 'When I Almost Fainted in Love',
     description: "Your smile in that red saree... I almost fainted in love. It wasn't just about how you looked — it was about the joy in your eyes, the confidence in your smile, the way you glowed from within. That image is etched in my heart forever. You were, and still are, absolutely breathtaking."
   },
   {
-    id: 11,
+    id: 12,
     image: '12.jpeg',
     title: 'Cooking for You',
     subtitle: 'The Love I Want to Serve',
     description: "I cook nicely — not better than you, of course, but well enough to make you smile. Whenever you're feeling low, whenever you're hungry or just need comfort, I want to cook for you. I want to feed you with my own hands, watch you enjoy every bite, and know that I'm the reason you feel cared for and loved."
-  },
-  {
-    id: 12,
-    image: '1.jpeg',
-    title: 'Your Glow',
-    subtitle: 'The Day at the Chinese Restaurant',
-    description: "This day we went out to your favorite Chinese cuisine restaurant. Your parents sent you, and your glow that day was unmatchable. You radiated happiness, warmth, and beauty in a way that stopped time. I took this picture not just as a memory, but as proof that heaven exists — and it looks like your smile."
   },
   {
     id: 13,
